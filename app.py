@@ -104,7 +104,14 @@ def generate_response(df, pred):
 
     data['pie_chart'] = {'jumlah_bot': jumlah_bot, 'jumlah_user': jumlah_user}
     data['summary'] = {'total_tweet': len(pred), 'total_user': len(user)}
-    data['barchart'] = barchart
+
+    m_b = ['Jan 2020', 'Feb 2020', 'Mar 2020', 'Apr 2020', 'May 2020', 'Jun 2020', 'Jul 2020', 'Aug 2020', 'Sep 2020', 'Oct 2020', 'Nov 2020', 'Dec 2020', 'Jan 2021']
+    barchart_list = []
+
+    for m in m_b:
+        barchart_list.append({m:barchart[m]})
+
+    data['barchart'] = barchart_list
     data['latest_tweet_bot'] = latest_tweet_bot
     data['latest_tweet_human'] = latest_tweet_human
     response = jsonify(message=data)
