@@ -109,7 +109,7 @@ def generate_response(df, pred):
     barchart_list = []
 
     for m in m_b:
-        temp = barchart
+        temp = barchart[m]
         temp['month'] = m
         barchart_list.append(temp)
 
