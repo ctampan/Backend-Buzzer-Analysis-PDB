@@ -109,7 +109,9 @@ def generate_response(df, pred):
     barchart_list = []
 
     for m in m_b:
-        barchart_list.append({m:barchart[m]})
+        temp = barchart
+        temp['month'] = m
+        barchart_list.append(temp)
 
     data['barchart'] = barchart_list
     data['latest_tweet_bot'] = latest_tweet_bot
