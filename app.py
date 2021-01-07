@@ -66,7 +66,7 @@ def generate_response(df, pred):
     for i in range(len(pred)):
 
         timebar = df['created_at'][i].split(' ')
-        if int(timebar[-1]) != 2020 :
+        if int(timebar[-1]) != 2020 and int(timebar[-1]) != 2021:
             continue
 
         user.update(df['Username'])
